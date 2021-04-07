@@ -1,0 +1,113 @@
+.test-nav {
+    width:25%;
+    height: 100vh;
+    color: rgb(163, 158, 158);
+    position: fixed;
+    background-color: #212121;
+}
+.test-nav .wrap-user-data { /* user-data, first block */
+    width: 100%;
+} 
+.test-nav .wrap-all-users{
+    padding: 7px;
+    display: flex;
+    justify-content: stretch;
+    flex-direction: column;
+    position: absolute;
+    height: 100%;
+    background-color:rgb(221, 146, 8);
+    z-index: 5000;
+    color:#212121;
+    font-size: 5px;
+    border-radius: 5px;
+    left: 10%;
+    width:80%;
+    opacity:0;
+    animation-name: anima;
+    animation-duration: 400ms;
+    animation-fill-mode: forwards;
+}
+@keyframes anima{
+    100%{
+        opacity:1;
+    }
+}
+.test-nav .wrap-all-users p{
+    margin: 5px 0;
+}
+.test-nav .wrap-all-users a{
+    font-size: 13px;
+}
+.test-nav .wrap-button-all-users{
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    z-index: 6000;
+}
+.test-nav .wrap-button-all-users button{
+    background-color: inherit;
+    border: none;
+ }
+.test-nav .wrap-button-all-users img{
+   display: block;
+   width: 17px;
+}
+.test-nav .user-data {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(44, 43, 43);
+}
+.test-nav .user-data p {
+    margin-bottom: 5px;
+    cursor: default;
+}
+.test-nav .user-data .FIO {
+    font-size: 20px;
+}
+.test-nav .user-data .email {
+    font-size: 13px;
+    color: rgb(71, 71, 71)
+}
+
+.test-nav ul { /* links, second block */
+    width: 100%; 
+    list-style: none;  
+} 
+.test-nav ul li {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+.test-nav a {
+    font-size: 18px;
+    color: inherit;
+   
+}
+.test-nav .disabled-link {
+    pointer-events: none;
+}
+.test-nav .active {
+    color: rgb(73, 73, 73)
+}
+.test-nav a:hover {
+    color: inherit;
+    font-weight: 600;
+    text-decoration: none!important;
+}
+
+.test-nav .wrap-logout { /* logut, third block */
+    width: 100%;
+    position: absolute;
+    bottom: 0;    
+} 
+.test-nav .wrap-logout button {
+    display: block;
+    width: 45%;
+    margin: 0 auto 15px auto;
+    border: none;
+    border-radius: 5px;
+    background-color: #2b2a2a;
+}

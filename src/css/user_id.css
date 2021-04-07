@@ -1,0 +1,40 @@
+.user_id {
+    width: 75%;
+    float: right;
+}
+
+.user_id .wrapper {
+    width:50%;
+    margin: 0 auto;
+}
+
+.user_id .wrapper-user {
+    padding: 15px 0;
+    width: 100%;
+    display: flex;
+    justify-content: stretch;
+}
+
+.user_id .wrap-info p{
+    color: rgb(44, 43, 43);
+    font-size: 23px;
+    font-weight: 600;
+}
+.user_id .wrap-buttons{
+    padding-left: 20px;
+    display: flex;
+    align-items: stretch;
+    /* width: 60%; */
+}
+.user_id .wrap-buttons button {
+    background-color: #fff;
+    border: none;
+    padding: 0 10px;
+}
+.user_id .wrap-buttons button img {
+    display: block;
+    height: 20px;
+    position: relative;
+    bottom: 3px;
+}
+

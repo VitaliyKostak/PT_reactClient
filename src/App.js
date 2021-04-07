@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router } from 'react-router-dom';
+import useRouter from './hooks/useRouter';
+import useAuthentication from './hooks/useAuthentication';
+import authenticationContext from './context/authenticationContext';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './app.css';
+
+
 
 function App() {
+  const { checkAuthentication, token, userId, login, logout } = useAuthentication();
+  const isAuthenticated = checkAuthentication();
+  console.log('auth', isAuthenticated);
+  const router = useRouter(isAuthenticated)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <authenticationContext.Provider value={{ token, userId, login, logout, isAuthenticated, checkAuthentication }}>
+      <div className="App">
+        <Router>
+          {router}
+        </Router>
+      </div>
+    </authenticationContext.Provider>
   );
 }
 

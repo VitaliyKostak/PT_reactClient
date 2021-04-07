@@ -1,0 +1,46 @@
+.friends-list-page {
+    width: 75%;
+    float: right;
+    position: relative;
+}
+.friends-list-page .wraper {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    height: 100vh;
+    min-height: 500px;
+    justify-content: center;
+}
+
+.friends-list-page .wrap-friend{
+    margin-top: 50px;
+    padding: 15px;
+}
+.friends-list-page .friend{
+    border-radius: 5px;
+   padding: 15px 30px;
+    background-color: rgba(33, 33, 33, 0.5);
+}
+.friends-list-page p{
+    margin: 10px 0;
+}
+.friends-list-page a{
+    font-size: 18px;
+ }
+.friends-list-page a:hover{
+   text-decoration: none;
+}
+.friends-list-page .wraper {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+}
+.friends-list-page .no-friends {
+    width:50%;
+    position: absolute;
+    left: 25%;
+    top: 60px;
+    background-color: rgba(33, 33, 33, 0.5);
+    border-radius: 5px;
+    padding: 20px;
+}

@@ -1,0 +1,211 @@
+.wrap-publications .errors-block {
+    width: 250px;
+    position: fixed;
+    z-index: 2000;
+    top: 10px;
+    right: 10px; 
+    display: flex;  
+    flex-direction: column;
+    align-items: flex-end;
+}
+.wrap-publications .errors-block div{
+    width: 100%;
+    border-radius: 5px;
+    background-color: #ff9966;
+    margin: 10px 10px; 
+    padding: 6px 15px; 
+    text-align: left;
+    position: relative;
+    top: -50px;
+    opacity: 0;
+    animation-name: fade-errors;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+}
+
+.wrap-publications .wrap-publication{
+    position: relative;
+    display: flex;
+}
+.wrap-publications .publication-card {  /*card style*/
+    color: rgb(44, 43, 43);
+    padding: 25px 25px 25px 50px;
+    border-radius: 5px;
+    margin: 25px 0;
+    position: relative;
+    width:100%
+}
+.wrap-publications .publication-card .wrap-content-block{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.wrap-publication textarea:focus {
+    outline-style: none;
+}
+
+.wrap-publications .author {
+    margin: 0;
+    color: inherit;
+    display: block;
+    font-size: 20px;
+    letter-spacing: 0.7px;
+    font-weight: 400;
+}
+
+.wrap-publications .wrap-content-block textarea {
+    resize: none;
+    display: block;
+    background-color: inherit;
+    border: none;
+    height: auto;
+    width: 100%;
+    padding-top: 20px;
+    font-size: 17px;
+    letter-spacing: 0.6px;
+}
+.wrap-publications .content {
+    display: block;
+    padding-top: 20px;
+    font-size: 17px;
+    letter-spacing: 0.6px;
+}
+.wrap-publications .content::before {
+    display: block;
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background-color: rgb(44, 43, 43);
+    top: 0;
+    left: -25px;
+}
+.wrap-publications .date {
+    margin: 0;
+    font-size: 15px;
+}
+
+/* comments */
+.wrapper-comments {
+    margin-top: 15px;
+    padding-left: 15px; /*!*/
+    position: relative;
+}
+.wrapper-comments .wrap-comments-list {
+    border-radius: 5px;
+    background-color: #dfe1e3;
+    padding: 5px 15px 5px 40px;
+}
+.wrapper-comments .wrap-comments-list::before {
+    display: block;
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 2px;
+    background-color: rgb(44, 43, 43);
+    top: 0;
+    left: 25px; /*!*/
+}
+.wrapper-comments .comment {
+position: relative;;
+}
+.wrapper-comments p {
+    color: inherit;
+    margin: 7px 0;
+    padding: 0;
+}
+
+.wrapper-comments .comment-author {
+    color: inherit;
+    font-size: 16px;
+}
+.wrapper-comments .comment-content {
+    color: inherit;
+    font-size: 14px;
+    letter-spacing: 0.6px;
+}
+.wrapper-comments .comment-date {
+    color: inherit;
+    font-size: 12px;
+}
+.comment-btn-reset {
+    background-color: inherit;
+    margin: 0;
+    padding: 0 3px;
+    height: auto;
+    width: auto;
+    border: none;
+}
+.coments-action {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.coments-action div {
+    margin: 0 3px;
+}
+.coments-action img{
+    display: block;
+    width: 13px;
+    margin: 0 7px;
+}
+
+
+
+
+
+.wrap-publication .publication-action {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+.wrap-publication .comunicate-block {
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    display: flex;
+}
+.wrap-publication .manage-block {
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    display: flex;
+}
+.wrap-publication .comunicate-block div, .wrap-publication .manage-block div {
+    margin: 0 4px;
+}
+
+.wrap-publication .manage-img, .wrap-publication .comunicate-img{
+    display: block;
+    width: 15px;
+    margin: 0 7px;
+}
+.publication-btn-reset {
+    background-color: #fff;
+    margin: 0;
+    padding: 0 3px;
+    height: auto;
+    width: auto;
+    border: none;
+}
+
+.wrap-publication .wrap-add-comment {
+    position: absolute;
+    bottom: 40px;
+    right: 0;
+    z-index: 1000;
+}
+.wrap-publication .wrap-add-comment textarea {
+    resize: none;
+    color: white;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    display: block;
+    min-width: 150px;
+    min-height: 200px;
+    background-color: rgb(68, 67, 67);
+}
