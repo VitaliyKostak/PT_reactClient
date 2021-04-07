@@ -50,10 +50,10 @@ function Login() {
                 <h1>Увійти</h1>
                 <form onSubmit={tryLogin}>
                     <div className="wrap-email w40">
-                        <input className="form-control form-control-lg w100" type="text" placeholder="email" name='email' defaultValue='example@gmail.com' />
+                        <input className="form-control form-control-lg w100" type="text" placeholder="email" name='email' />
                     </div>
                     <div className="wrap-password w40">
-                        <input defaultValue='1234567' className="form-control form-control-lg w100" type="password" placeholder="password" name='password' />
+                        <input className="form-control form-control-lg w100" type="password" placeholder="password" name='password' />
                     </div>
                     <div className="wrap-handler w40">
                         <button type="submit" className="btn w100" disabled={loading}>Увійти</button>
