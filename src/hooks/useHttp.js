@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import useAuthentication from './useAuthentication';
 
 function useHttp() {
@@ -52,7 +52,7 @@ function useHttp() {
         }
 
 
-    }, []);
+    }, [logout]);
 
     const clearErrors = () => {
         setErrors([null])

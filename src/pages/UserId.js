@@ -58,7 +58,7 @@ function UserId() {
 
         setUser(user);
         setLoadUser(false);
-    }, [])
+    }, [checkAuthentication, logout, request, id])
 
     async function doFriend(action) {
         if (!checkAuthentication()) {

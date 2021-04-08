@@ -1,4 +1,4 @@
-import React, { useRef, useState, useContext, useEffect } from 'react';
+import React, { useRef, useState, useContext, useEffect, useCallback } from 'react';
 import authenticationContext from '../../context/authenticationContext';
 import useHttp from '../../hooks/useHttp';
 import '../../css/publication.css';
@@ -20,7 +20,7 @@ function Publication({ publication }) {
     const editableValue = useRef();
     const commentValue = useRef();
 
-    async function getAuthor() {
+    const getAuthor = useCallback(async () => {
         if (!checkAuthentication()) {
             logout();
             window.location.replace('/');
@@ -34,9 +34,9 @@ function Publication({ publication }) {
             }
         }
         catch (e) { }
-    }
+    }, [checkAuthentication, logout, request, authorId])
 
-    useEffect(getAuthor, [])
+    useEffect(() => { getAuthor() }, [getAuthor])
 
 
     function checkOwner() {

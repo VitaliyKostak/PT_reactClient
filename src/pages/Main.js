@@ -28,7 +28,7 @@ function Main() {
         }
         setUser(user);
 
-    }, [])
+    }, [checkAuthentication, logout, request])
 
     function tape() {
         const tape = publications ?

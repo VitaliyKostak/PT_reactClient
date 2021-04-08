@@ -1,4 +1,4 @@
-import React, { useRef, useState, useContext, useEffect } from 'react';
+import React, { useRef, useState, useContext, useEffect, useCallback } from 'react';
 import authenticationContext from '../context/authenticationContext';
 import Publication from './partials/Publication';
 import useHttp from '../hooks/useHttp';
@@ -8,13 +8,13 @@ function MyPublication() {
 
     const textNewPublication = useRef();
     const { logout, checkAuthentication } = useContext(authenticationContext);
-    const { loading, errors, clearErrors, request } = useHttp();
+    const { loading, errors, request } = useHttp();
     const [textAreaErr, setTextAreaErr] = useState([]);
     const [newPublicate, setNewPublicate] = useState(false);
     const [publications, setPublications] = useState([]);
 
 
-    const getPublications = async () => {
+    const getPublications = useCallback(async () => {
         if (!checkAuthentication()) {
             logout();
             window.location.replace('/');
@@ -26,8 +26,8 @@ function MyPublication() {
             const { publications } = await request(`/api/publication/by_user/${userId}`, 'GET', null, { Authorization: `Bearer ${token}` });
             setPublications(publications)
         } catch (e) { }
-    }
-    useEffect(() => { return getPublications() }, [newPublicate]);
+    }, [checkAuthentication, logout, request])
+    useEffect(() => { return getPublications() }, [newPublicate, getPublications]);
 
     function clearTextAreaErr() {
         if (textAreaErr.length) setTextAreaErr([]);

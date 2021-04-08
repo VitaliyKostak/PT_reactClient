@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect, useRef } from 'react';
+import { useState, useCallback } from 'react';
 
 const authData = 'authData';
 
@@ -9,11 +9,11 @@ function useAuthentication() {
 
 
 
-    const checkAuthentication = () => {
+    const checkAuthentication = useCallback(() => {
         const lsData = JSON.parse(localStorage.getItem(authData));
         if (lsData && lsData.token) return true;
         return false;
-    };
+    }, []);
     const login = useCallback((jwtToken, id) => {
         setToken(jwtToken);
         setUserId(userId);
@@ -24,7 +24,7 @@ function useAuthentication() {
         setToken(null);
         setUserId(null);
         localStorage.removeItem(authData);
-    })
+    }, [])
 
 
     return { token, userId, checkAuthentication, login, logout }

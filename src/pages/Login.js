@@ -10,7 +10,7 @@ function Login() {
 
     async function tryLogin(event) {
         event.preventDefault();
-        const { name, surname, email, password } = event.target.elements;
+        const { email, password } = event.target.elements;
         if (!email.value.trim() || !password.value.trim()) {
             setInputError('Поля не заповнені');
             return false;

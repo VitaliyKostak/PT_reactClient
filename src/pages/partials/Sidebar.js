@@ -28,14 +28,12 @@ function Sidebar({ activePage }) {
         }
         const { userId, token } = JSON.parse(localStorage.getItem('authData'));
         let user = await request(`/api/user/${userId}/${userId}`, 'GET', null, { Authorization: `Bearer ${token}` });
-
         if (!user) {
             window.location.replace('/my_publication');
             return false;
 
         }
         user = user.user;
-
         const { users: allUsers } = await request('/api/user/users', 'GET', null, { Authorization: `Bearer ${token}` })
         setAllUsers(allUsers);
 
@@ -43,7 +41,7 @@ function Sidebar({ activePage }) {
             setFriendsIn(user.friendsInList.length)
         }
         setUser(user);
-    }, [])
+    }, [checkAuthentication, logout, request])
 
     const navItems = pageList.map(page =>
         page.page === activePage ?

@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import authenticationContext from '../context/authenticationContext';
 import Sidebar from './partials/Sidebar';
-import Publication from './partials/Publication';
 import useHttp from '../hooks/useHttp';
 import '../css/friends_list.css'
 
@@ -46,7 +45,7 @@ function Main() {
 
         console.log(result);
 
-    }, [])
+    }, [checkAuthentication, logout])
 
     return (
         <>
